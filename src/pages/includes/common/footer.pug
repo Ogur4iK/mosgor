@@ -1,0 +1,32 @@
+footer#footer 
+    .container.footer-container
+        .logo-container.footer-logo-container
+            a(href="/").logo-link
+                +icon('logo', 'footer-logo')
+            .logo-title 
+                p.logo-title-txt МосГорЭкспертиза
+                p.logo-title-desc Проводим экспертизу по всей России с 1997 года
+        .footer-content 
+            .location-container 
+                p.location 
+                    +icon('location-icon', 'location')
+                    |г. Москва, ул. 1я Бухвостова, д. 12/11, корп. 53
+                p.location 
+                    +icon('location-icon', 'time')
+                    |Пн-Пт. с 9–00 до 18–00, без выходных
+            a.present-link(href="#")
+                +icon('present-icon', 'presentation')
+                |Получить презентацию
+            .contacts-container
+                a(href="tel:+74991131969").contact-phone +7 (499) 113-19-69
+                button.contact-btn Обратный звонок
+                a(href="mailto:info@mge.msk.ru").contact-mail info@mge.msk.ru
+    .copyright
+        .container.copyright-container
+            .copyright-text-container 
+                p.copyright-text ИНН: 7701010056 ОГРН: 103770005263
+                a.footer-privacy(href="#") Политика конфиденциальности 
+            p.dev Разработка сайта — 
+                a.dev-link(href="#") Бондарь Роман
+    block scripts
+        script(src='scripts/main.min.js')

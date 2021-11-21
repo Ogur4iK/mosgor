@@ -1,0 +1,354 @@
+extends common/layout
+include includes/common/mixins
+
+block title
+  title МосГорЭкспертиза - ЭПБ
+
+block breadcrumbs
+  +breadcrumbs({'Главная': '/', 'Экспертиза промышленной безопасности': 'epb.html'})
+
+block content
+  main
+    section#title-section
+      .container
+        .title-container
+          .title-content
+            h1.title Экспертиза промышленной безопасности по всей России в срок или быстрее
+            +titleCallToAction()
+            ul.title-services
+              li.title-service-item 
+                +icon('title-service-icon', 'calendar')
+                p.title-service-desc Проводим ЭПБ в&nbsp;срок&nbsp;#[strong &nbsp;от&nbsp;1&nbsp;недели]
+              li.title-service-item 
+                +icon('title-service-icon', 'check')
+                p.title-service-desc #[strong Регистрация&nbsp;в&nbsp;РТН с&nbsp;первого&nbsp;раза] в&nbsp;99%&nbsp;случаев
+              li.title-service-item 
+                +icon('title-service-icon', 'idea')
+                p.title-service-desc Компетентные специалисты #[strong с&nbsp;опытом&nbsp;от&nbsp;7&nbsp;лет]
+              li.title-service-item 
+                +icon('title-service-icon', 'license')
+                p.title-service-desc Лицензия на право проведения экспертизы #[span.title-service-accent ПБ № ДЭ-00–017556]
+          +clippedImage('../images/epb/title.jpg', 'Экспертиза промышленной безопасности')
+    +clients()
+    section#targets
+      .container
+        .targets-contaniner
+          .targets-content.target
+            h3.target-title Цель экспертизы промышленной безопаcности
+            p.target-desc — оценка соответствия объекта экспертизы предъявляемым к нему требованиям промышленной безопасности согласно Федеральному закону № 116-ФЗ «О промышленной безопасности опасных производственных объектов»
+          .targets-content.task
+            h3.target-title Задача экспертизы промышленной безопаcности
+            p.target-desc Устанавливает полноту и достоверность относящихся к объекту экспертизы документов. Выявляет дефекты, повреждения, изменения характеристик конструкций и материалов. Определяет степень износа и несущую способность строительных конструкций и оценивает возможность дальнейшей безаварийной эксплуатации.
+    section#tabs.container
+      h3.tabs-title Выполняем все виды экспертизы, #[span предусмотренные ст. 13 Федерального закона № 116-ФЗ от&nbsp;21.07.1997&nbsp;«О&nbsp;промышленной&nbsp;безопасности&nbsp;опасных&nbsp;производственных&nbsp;объектах»]
+      ul.tabs-top
+        li.tab-top
+          button.tab-top-btn Зданий и сооружений
+        li.tab-top
+          button.tab-top-btn.active Технических устройств
+        li.tab-top
+          button.tab-top-btn Проектной документации
+        li.tab-top
+          button.tab-top-btn Обоснования безопасности
+        li.tab-top
+          button.tab-top-btn Декларации промышленной безопасности
+      ul 
+        li
+          p.tabs-bottom-title На объектах:
+          .tabs-bottom-container
+            ul.tabs-bottom
+              li.tab-bottom 
+                button.tab-bottom-btn.active Угольной, сланцевой и&nbsp;торфяной&nbsp;промышленности
+              li.tab-bottom 
+                button.tab-bottom-btn Получения, хранения, использования и транспортировки взрывчатых веществ
+              li.tab-bottom 
+                button.tab-bottom-btn Горной и нерудной промышленности
+              li.tab-bottom 
+                button.tab-bottom-btn Нефтегазодобывающего комплекса
+              li.tab-bottom 
+                button.tab-bottom-btn Магистрального трубопроводного транспорта
+              li.tab-bottom 
+                button.tab-bottom-btn Химической, нефтехимической и нефтеперерабатывающей промышленности
+              li.tab-bottom 
+                button.tab-bottom-btn Систем водоподготовки
+              li.tab-bottom 
+                button.tab-bottom-btn Нефтепродуктообеспечения
+              li.tab-bottom 
+                button.tab-bottom-btn Пищевой и масложировой промышленности
+              li.tab-bottom 
+                button.tab-bottom-btn Газоснабжения
+              li.tab-bottom 
+                button.tab-bottom-btn Металлургической промышленностии ОПО чёрных и цветных металлов
+              li.tab-bottom 
+                button.tab-bottom-btn Использующих грузоподъёмные механизмы, эскалаторы, канатные дороги и фуникулёры
+              li.tab-bottom 
+                button.tab-bottom-btn Хранения, переработки и использования растительного сырья
+            .tabs-bottom-content
+              .bottom-bordered-wrap
+                .tabs-icon-wrap
+                  +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                p.tabs-content-title Угольной, сланцевой и&nbsp;торфяной&nbsp;промышленности
+                +dottedList([
+                  'Шахтных подъёмных установок',
+                  'Шахтных подъёмных установок',
+                  'Проходческих комплексов',
+                  'Проходческих комплексов',
+                  'Очистных комплексов, агрегатов&nbsp;и&nbsp;комбайнов',
+                  'Очистных комплексов, агрегатов&nbsp;и&nbsp;комбайнов',
+                  'Ленточных конвейеров',
+                  'Ленточных конвейеров',
+                  'Скребковых конвейеров',
+                  'Скребковых конвейеров',
+                  'Оборудования для механизации вспомогательных работ',
+                  'Оборудования для механизации вспомогательных работ',
+                ], 'tabs-list')
+                +getCommerce()
+              p.tabs-content-sub-title.w50p Когда проводится экспертиза технических устройств
+              +numericList([
+                'при отсутствии проектной документации, либо отсутствия в ней данных о сроке эксплуатации',
+                'по истечении сроков безопасной эксплуатации, установленных заключениями экспертизы',
+                'после аварии на ОПО, в результате которой были повреждены несущие конструкции данных ЗС',
+                'по истечении срока эксплуатации, установленного проектной дкументацией',
+                'при обнаружении значительных дефектов, повреждений и деформаций',
+                'при изменении технологического назначения ЗС',
+                'по предписанию органов Ростехнадзора',
+              ], 'tabs-list')
+    +callback('Не нашли в списке ваш опасный производственный объект?', 'Оставьте номер телефона — мы свяжемся с вами в течение 20 минут и расскажем, сможем ли провести экспертизу на вашем объекте, сколько это займёт и сколько будет стоить')
+    section#steps
+      .container
+        .steps-container
+          h3.steps-title Этапы взаимодействия с Вами
+          ul.steps-items 
+            li.steps-item
+              .step-item-content
+                .step-text 
+                  |Заключаем договор на проведение ЭПБ 
+                  span в котором фиксируем сроки проведения и стоимость ответственность
+                img.step-img(src="/images/epb/steps/step-1.png", alt="Этап 1")
+            li.steps-item
+              .step-item-content
+                .step-text 
+                  |Эксперт выезжает #[br]на объект 
+                  span для проведения замеров со своими приборами в назначенное время на любое расстояние
+                img.step-img(src="/images/epb/steps/step-2.png", alt="Этап 2")
+            li.steps-item
+              .step-item-content
+                .step-text 
+                  |Готовим заключение ЭПБ для подачи в РТН
+                  span с актами результатов ТД, точными реквизитами ЮЛ, с верными данным&nbsp;объекта
+                img.step-img(src="/images/epb/steps/step-3.png", alt="Этап 3")
+            li.steps-item
+              .step-item-content
+                .step-text 
+                  |Сдаём заключение ЭПБ в РТН для регистрации 
+                  span Сдаём заключение на диске, подлинник заявления о&nbsp;регистрации,&nbsp;подписанного заказчиком
+                img.step-img(src="/images/epb/steps/step-4.png", alt="Этап 4")
+            li.steps-item
+              .step-item-content
+                .step-text 
+                  |Получаем&nbsp;уведомление о&nbsp;регистрации&nbsp;в&nbsp;РТН и&nbsp;передаём&nbsp;эспертизу&nbsp;Вам
+                  span Вы&nbsp;вкладываете&nbsp;оригинал&nbsp;заключения к&nbsp;документам&nbsp;на&nbsp;ОПО,&nbsp;а&nbsp;мы&nbsp;надёжно храним у себя его копию
+                img.step-img(src="/images/epb/steps/step-5.png", alt="Этап 5")
+            li.steps-item
+              .step-text 
+                |99% 
+                span экспертиз вносятся в реестр&nbsp;РТН без&nbsp;доработки
+              button.btn.step-btn Получить коммерческое предложение
+    section#result.container 
+      h3.result-title Вы получите заключение ЭПБ, которое состоит из более чем 50 листов и содержит:
+      .result-tabs-container
+        ul.result-tabs 
+          li.result-tab.active Вводную часть состоящую из данных, на основании которых проводился экспертный анализ
+          li.result-tab Список объектов, которые оценивались
+          li.result-tab Сведения заказчика
+          li.result-tab Рассматриваемая документация
+          li.result-tab Предназначены объектов экспертизы
+          li.result-tab Выводы, сделанные на основании оценки данный&nbsp;заказчика
+          li.result-tab Приложение, содержащее список #[br]нормативно-технической базы
+        ul.result-tabs-content 
+          li.result-tab-content
+            img.result-img(src="/images/epb/result-tab-1.jpg", alt="Вводную часть")
+    section#orders
+      .container
+        h3.orders-title Посмотрите примеры реальных заключений:
+        .order-items-wrap
+          ul.order-items 
+            li.order-item
+              .order-img-wrap
+                img.order-img(src="images/epb/order.jpg", alt="Заключение")
+            li.order-item
+              .order-img-wrap
+                img.order-img(src="images/epb/order.jpg", alt="Заключение")
+            li.order-item
+              .order-img-wrap
+                img.order-img(src="images/epb/order.jpg", alt="Заключение")
+            li.order-item
+              .order-img-wrap
+                img.order-img(src="images/epb/order.jpg", alt="Заключение")
+    section#services-slider
+      .container
+        h3.services-slider-title Также Вас могут заинтересовать другие нашие услуги
+        .slider-wrap
+          .swiper.services-slider
+            ul.swiper-wrapper
+              li.swiper-slide(style="background-image: url('images/epb/slides/slide-1.jpg');") 
+                .slide-content-wrap
+                  .slide-content
+                    .slide-icon-wrap.tabs-icon-wrap 
+                      +icon(['tabs-icon', 'slide-icon'],'tabs-icon-epb')
+                    p.slide-title Экспертиза промышленной безопасности зданий и сооружений
+                    .slide-hide-content 
+                      +dottedList([
+                        'Проводим ЭПБ в срок от 1 недели',
+                        'Регистрация в РТН с первого раза в 99% случаев',
+                      ], 'slide-dotted-list')
+                      +getCommerce('Подробнее', 'slide-button')
+              li.swiper-slide(style="background-image: url('images/epb/slides/slide-2.jpg');") 
+                .slide-content-wrap
+                  .slide-content
+                    .slide-icon-wrap.tabs-icon-wrap 
+                      +icon(['tabs-icon', 'slide-icon'],'tabs-icon-epb')
+                    p.slide-title Техническое диагностирование без&nbsp;регистрации в&nbsp;РосТехНадзоре
+                    .slide-hide-content 
+                      +dottedList([
+                        'Проводим ЭПБ в срок от 1 недели',
+                        'Регистрация в РТН с первого раза в 99% случаев',
+                      ], 'slide-dotted-list')
+                      +getCommerce('Подробнее', 'slide-button')
+              li.swiper-slide(style="background-image: url('images/epb/slides/slide-3.jpg');") 
+                .slide-content-wrap
+                  .slide-content
+                    .slide-icon-wrap.tabs-icon-wrap 
+                      +icon(['tabs-icon', 'slide-icon'],'tabs-icon-epb')
+                    p.slide-title Паспортизаци #[br]технических #[br]устройств, зданий #[br]и сооружений
+                    .slide-hide-content 
+                      +dottedList([
+                        'Проводим ЭПБ в срок от 1 недели',
+                        'Регистрация в РТН с первого раза в 99% случаев',
+                      ], 'slide-dotted-list')
+                      +getCommerce('Подробнее', 'slide-button')
+              li.swiper-slide(style="background-image: url('images/epb/slides/slide-1.jpg');") 
+                .slide-content-wrap
+                  .slide-content
+                    .slide-icon-wrap.tabs-icon-wrap
+                      +icon(['tabs-icon', 'slide-icon'],'tabs-icon-epb')
+                    p.slide-title Техническое диагностирование без регистрации в РосТехНадзоре
+                    .slide-hide-content 
+                      +dottedList([
+                        'Проводим ЭПБ в срок от 1 недели',
+                        'Регистрация в РТН с первого раза в 99% случаев',
+                      ], 'slide-dotted-list')
+                      +getCommerce('Подробнее', 'slide-button')
+          .swiper-button-next
+          .swiper-button-prev
+    section#experts
+      .container
+        h3.experts-title Вашей задачей займутся квалифицированные&nbsp;штатные&nbsp;эксперты
+        ul.experts-descs
+          li.experts-desc 
+            +icon('experts-icon', 'idea')
+            p.experts-desc-txt C опытом проведения #[br]ЭПБ от 7 и более лет
+          li.experts-desc 
+            +icon('experts-icon', 'license')
+            p.experts-desc-txt Аттестованые в установленном порядке и&nbsp;соответствующие&nbsp;федеральным нормам&nbsp;в&nbsp;области&nbsp;промышленной&nbsp;безопасности
+        +expertsList([
+          {0:'Э2 ТУ', 1:'10 лет', 2:'Сергей Амбросьев'},
+          {0:'Э6 ТУ', 1:'8 лет', 2:'Иван<br>Иванов'},
+          {0:'Э8Д', 1:'7 лет', 2:'Сергей Амбросьев'},
+          {0:'Э12ТУ', 1:'11 лет', 2:'Иммануил<br>Муса-Аджиев'},
+          {0:'Э2 ТУ', 1:'11 лет', 2:'Сергей Амбросьев'},
+          {0:'Э2 ТУ', 1:'11 лет', 2:'Иван<br>Иванов'},
+          {0:'Э12ТУ', 1:'11 лет', 2:'Иммануил<br>Муса-Аджиев'},
+          {0:'Э14.4. ЗС', 1:'5 лет', 2:'Александр Белоснеженцев'},
+          {0:'Э2 ТУ', 1:'11 лет', 2:'Иван<br>Иванов'},
+          {0:'Э16ТУ', 1:'6 лет', 2:'Александр Белоснеженцев'},
+          {0:'Э12ТУ', 1:'11 лет', 2:'Иммануил<br>Муса-Аджиев'},
+          {0:'Э12ТУ', 1:'11 лет', 2:'Александр Белоснеженцев'},
+        ])
+    section#lab
+      .lab-img
+        img(src="/images/epb/lab.jpg", alt="Аттестация лаборатории")
+      .lab-content 
+        h3.lab-title Наша лаборатория аттестована на проведение исследований методами неразрушающего контроля #[span и соответствует требованиям системы СНК]
+        .lab-desc-container 
+          +icon('lab-icon', 'search')
+          p.lab-desc Все оборудование проходит поверку, калибровку&nbsp;и&nbsp;аттестацию каждый год
+        p.lab-list-title Методы:
+        +dottedList([
+          'Магнитный',
+          'Визуально-измерительный',
+          'Тепловой',
+          'Радиографический',
+          'Электрический (ВИК)',
+          'Капиллярный',
+          'Ультразвуковой',
+          'Вибрационный',
+          'Акустическая эмиссиям',
+          'Электромагнитный',
+        ], ['tabs-list', 'labs-list'])
+        button.contact-btn Подробнее о лаборатории
+    section#get-commerce 
+      .container 
+        .get-commerce-content
+          .commerce-desc-container
+            h3.commerce-title Участвуем в закупках и заключаем договоры на выполнение ЭПБ по всей России
+            +commerceList([
+              {0: 'rub', 1: 'Поможем сформировать начальную цену закупки&nbsp;и&nbsp;сделаем вашу работу продуктивнее'},
+              {0: 'mail', 1: 'Гарантировано вышлем КП, если&nbsp;есть&nbsp;обратная&nbsp;связь&nbsp;для уточнении деталей'},
+              {0: 'calendar2', 1: 'Срок ответа до рабочих 3 дней'},
+            ])
+          .commerce-form-container 
+            p.commerce-form-title Получите коммерческое предложение #[span для расчёта начальной цены закупки]
+            form.commerce-form
+              .input-file-wrap
+                label.file-label(for="file-input") 
+                  +icon('file-icon', 'file')
+                  |Пришлите техзадание (необязательно) 
+                  input#file-input(type="file")
+                p.files-selected Выбрано файлов: 2
+              .callback-input-wrap.commerce-input-wrap
+                label.callback-label(for="name-commerce") Как Вас зовут?
+                input#name-commerce.callback-input(type="text", name="Имя", placeholder="Иван")
+              .callback-input-wrap.commerce-input-wrap
+                label.callback-label(for="phone-commerce") Введите ваш номер телефона
+                input#phone-commerce.callback-input(type="text", name="Имя", placeholder="+7 (_ _) _ _ _-_ _-__")
+              .callback-input-wrap.commerce-input-wrap
+                label.callback-label(for="mail-commerce") Куда прислать КП?
+                input#mail-commerce.callback-input(type="text", name="Имя", placeholder="pochta@mail.ru")
+              .callback-input-wrap.commerce-input-wrap
+                input.btn.commerce-btn(type="submit", value="Запросить коммерческое предложение")
+                input#privacy-commerce(type="checkbox", name="privacy", checked)
+                label.callback-label.privacy-label(for="privacy-commerce") Согласен с Политикой конфиденциальности сайта
+    section#licenses.container
+      h3.licenses-title Сертификаты и лицензии:
+      .slider-wrap
+        .swiper.licenses-slider
+          ul.swiper-wrapper
+            li.swiper-slide
+              .license-img-wrap
+                img.license-img(src="/images/epb/license.jpg", alt="Лицензия")
+              p.license-desc Приказ об аккредитации проектной документации
+            li.swiper-slide
+              .license-img-wrap
+                img.license-img(src="/images/epb/license.jpg", alt="Лицензия")
+              p.license-desc Приказ об аккредитации проектной документации
+            li.swiper-slide
+              .license-img-wrap
+                img.license-img(src="/images/epb/license.jpg", alt="Лицензия")
+              p.license-desc Приказ об аккредитации проектной документации
+            li.swiper-slide
+              .license-img-wrap
+                img.license-img(src="/images/epb/license.jpg", alt="Лицензия")
+              p.license-desc Приказ об аккредитации проектной документации
+            li.swiper-slide
+              .license-img-wrap
+                img.license-img(src="/images/epb/license.jpg", alt="Лицензия")
+              p.license-desc Приказ об аккредитации проектной документации
+            li.swiper-slide
+              .license-img-wrap
+                img.license-img(src="/images/epb/license.jpg", alt="Лицензия")
+              p.license-desc Приказ об аккредитации проектной документации
+        .swiper-button-next
+        .swiper-button-prev
+    +callback('Расскажите о своей задаче нашему эксперту и получите профессиональную консультацию', 'Оставьте заявку — наш специалист свяжется с вами и ответит на все вопросы', 'task')
+    

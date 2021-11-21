@@ -1,0 +1,431 @@
+@import "../../local_modules/normalize.css/normalize";
+@import "../mixins/common.scss";
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    &:focus {
+        outline: 0;
+    }
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    font-size: 16px;
+}
+
+select {
+    appearance: none;
+    border: none;
+    font: inherit;
+    &:focus {
+        outline: 0;
+    }
+}
+
+textarea {
+    font: inherit;
+    border: none;
+    resize: none;
+    &:focus {
+        outline: 0;
+    }
+}
+
+input {
+    font: inherit;
+    border: none;
+    background: none;
+    &:focus {
+        outline: 0;
+    }
+}
+
+body,
+* {
+    font-family: "Gilroy-Medium", sans-serif;
+    color: $color-font;
+    font-size: 19px;
+}
+
+button {
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    &:hover,
+    &:active,
+    &:focus {
+        outline: 0;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1380px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.btn {
+    cursor: pointer;
+    display: block;
+    background: $color-accent;
+    border-radius: 2px;
+    padding: 15px 20px;
+    font-size: 18px;
+    color: #fff;
+    border: 1px solid $color-accent;
+    transition: color $primary-delay ease-in, background $primary-delay ease-in;
+    &:hover,
+    &:active,
+    &:focus {
+        background: none;
+        color: $color-accent;
+    }
+}
+
+.btn-stroke {
+    background: none;
+    border: 1px solid $color-accent;
+    color: $color-accent;
+    &:hover,
+    &:active,
+    &:focus {
+        background: $color-accent;
+        color: #fff;
+    }
+}
+
+.contacts-container {
+    text-align: right;
+    width: 240px;
+}
+
+.contact-phone {
+    font-size: 30px;
+    margin: -3px 0 0;
+    white-space: nowrap;
+}
+
+.contact-btn {
+    padding: 0;
+    font-weight: 300;
+    font-size: 17px;
+    text-decoration-line: underline;
+    color: $color-accent;
+    background: 0;
+}
+
+.breadcrumbs {
+    @include display-flex($justify: flex-start);
+    margin: 45px 0;
+}
+
+.breadcrumb-link {
+    color: $color-primary;
+}
+
+.breadcrumb-link,
+.breadcrumb-current {
+    font-size: 15px;
+}
+
+.img-title-container {
+    position: relative;
+    width: 970px;
+    clip-path: url(#clipping);
+    &::before {
+        @include display-before;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.57);
+        background-blend-mode: lighten;
+        z-index: 1;
+    }
+}
+
+.img-title {
+    width: 100%;
+}
+
+.w50p {
+    width: 50%;
+}
+
+.dotted-item {
+    padding: 0 0 0 17px;
+    margin-bottom: 8px;
+    font-weight: 350;
+    font-size: 17px;
+    line-height: 25px;
+    position: relative;
+    &::before {
+        @include display-before($w: 7.5px, $h: 7.5px);
+        background: $color-primary;
+        transform: rotate(-45deg);
+        left: 2px;
+        top: 8px;
+    }
+}
+
+.num-item {
+    padding: 0 0 0 53px;
+    margin-bottom: 30px;
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 21px;
+    position: relative;
+    counter-increment: list;
+    &::before {
+        @include display-before($content: counter(list), $w: 35px, $h: 35px);
+        background: $color-primary;
+        left: 0;
+        top: 0;
+        @include display-flex();
+        border-radius: 50%;
+        font-size: 22px;
+        color: $color-third;
+    }
+}
+
+#callback {
+    margin-bottom: 130px;
+}
+
+#task-callback {
+    margin-bottom: 160px;
+}
+
+.callback-container {
+    padding: 95px 100px 70px;
+    background: $color-primary;
+    @include display-flex;
+    flex-direction: column;
+}
+
+.callback-title {
+    font-size: 50px;
+    line-height: 55px;
+    text-align: center;
+    font-feature-settings: "liga" off;
+    margin: 0 auto 15px;
+    color: $color-third;
+}
+
+.callback-desc {
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: $color-third;
+    margin: 0 auto 40px;
+    max-width: 920px;
+}
+
+.callback-form {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 -15px;
+    @include display-flex(flex-start, flex-start);
+}
+
+.callback-input-wrap {
+    width: 33.33%;
+    padding: 0 15px;
+    .btn {
+        margin: 30px 0 10px;
+        height: 64px;
+        max-width: 303px;
+        width: 100%;
+        &:hover {
+            background: $color-third;
+        }
+    }
+}
+
+.callback-label {
+    display: block;
+    font-size: 17px;
+    line-height: 25px;
+    color: $color-third;
+    margin-bottom: 5px;
+}
+
+.callback-input {
+    border-radius: 2px;
+    background: $color-third;
+    padding: 16px 16px 16px 22px;
+    width: 100%;
+    height: 64px;
+    max-width: 303px;
+    width: 100%;
+    &::placeholder {
+        font-weight: 350;
+        font-size: 20px;
+        color: $color-font-placeholder;
+    }
+}
+
+.privacy-label {
+    margin: 0;
+    font-size: 12px;
+    line-height: 19px;
+    white-space: nowrap;
+    padding-left: 20px;
+    position: relative;
+    &::before {
+        @include display-before($h: 15px, $w: 15px);
+        background: $color-third;
+        border-radius: 1px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+#privacy,
+#task-privacy {
+    display: none;
+    &:checked + .privacy-label::before {
+        background-color: $color-third;
+        background-image: url("data:image/svg+xml,%3Csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='-1' x2='5.27707' y2='-1' transform='matrix(0.659211 0.751958 -0.872777 0.488119 0.119385 4.56543)' stroke='%23003D74' stroke-width='2'/%3E%3Cpath d='M3.57495 8.11035L9.43137 1.21263' stroke='%23003D74' stroke-width='2'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+#footer {
+    background: $color-secondary;
+    .logo-title-txt,
+    .logo-title-desc {
+        color: $color-third;
+    }
+    .logo {
+        margin-right: 25px;
+    }
+}
+
+.footer-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-logo-container {
+    padding: 20px 35px 0 0;
+}
+
+.footer-content {
+    border-left: 1px solid rgba(#fff, 0.2);
+    padding: 45px 0 45px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    .contact-phone,
+    .contact-btn {
+        color: $color-third;
+    }
+}
+
+.contact-mail {
+    font-size: 17px;
+    padding-top: 35px;
+    color: $color-third;
+}
+
+.location {
+    display: flex;
+    color: $color-third;
+    font-size: 16px;
+    line-height: 108%;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 270px;
+}
+
+.location-icon,
+.present-icon {
+    width: 22px;
+    height: 22px;
+    fill: $color-third;
+    margin-right: 15px;
+}
+
+.present-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 18px;
+    text-decoration-line: underline;
+    color: $color-third;
+    margin: 0 30px;
+}
+
+.copyright {
+    background: $color-third;
+    padding: 10px 0;
+}
+
+.copyright-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 30px;
+}
+
+.copyright-text {
+    margin-right: 55px;
+    font-size: 15px;
+}
+
+.footer-privacy {
+    font-size: 15px;
+    text-decoration-line: underline;
+}
+
+.dev {
+    font-size: 15px;
+}
+.dev-link{
+    font-size: 15px;
+    color: $color-primary;
+}

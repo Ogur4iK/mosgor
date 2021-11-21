@@ -1,0 +1,101 @@
+mixin icon(className, name)
+  svg(class= className): use(xlink:href="images/sprite.svg#" + name)
+
+mixin breadcrumbs(arr)
+  -var n = 0
+  .container
+    ul.breadcrumbs
+      each val, key in arr
+        -n++
+        if n < Object.keys(arr).length
+          li
+            a.breadcrumb-link(href=val)!=key + '&nbsp;—&nbsp;' 
+        else
+          li
+            span.breadcrumb-current=key
+
+mixin clippedImage(url, alt)
+  .img-title-container
+      img.img-title(src=url alt=alt)
+      svg(height="0" width="0")
+        clippath#clipping
+          rect(x="15" y="275" width="185" height="185" rx="5" ry="5")
+          rect(x="215" y="22" width="205" height="480" rx="5" ry="5")
+          rect(x="435" y="100" width="205" height="470" rx="5" ry="5")
+          rect(x="655" y="185" width="185" height="308" rx="5" ry="5")
+
+mixin titleCallToAction()
+  .title-action-container
+    p.title-action-txt Получите коммерческое предложение для вашей отрасли с ценой и сроками
+    .title-action-buttons
+      +getCommerce()
+      button.contact-btn Пригласить на тендер
+
+mixin clients()
+  section#clients.container
+    h2.clients-title Помогли 343 заказчикам среди которых:
+    ul.clients
+      li.client
+        img.client-img(src="images/clients/client-1.png", alt="Росатом")
+      li.client
+        img.client-img(src="images/clients/client-2.png", alt="Росатом")
+      li.client
+        img.client-img(src="images/clients/client-3.png", alt="Росатом")
+      li.client
+        img.client-img(src="images/clients/client-1.png", alt="Росатом")
+      li.client
+        img.client-img(src="images/clients/client-2.png", alt="Росатом")
+      li.client
+        img.client-img(src="images/clients/client-3.png", alt="Росатом")
+      li.client
+        img.client-img(src="images/clients/client-1.png", alt="Росатом")
+      li.client.client-all
+        a.client-all-link(href="#") Посмотреть всех
+
+mixin callback(title, desc, prefix)
+  section.container(id=(prefix ? prefix + '-callback' : 'callback'))
+    .callback-container 
+      p.callback-title!=title
+      p.callback-desc!=desc
+      form.callback-form(action="mail.php", method="POST")
+        .callback-input-wrap
+          label.callback-label(for=(prefix ? prefix + '-name' : 'name')) Ваше имя
+          input.callback-input(id=(prefix ? prefix + '-name' : 'name') type="text", name="Имя", placeholder="Иван")
+        .callback-input-wrap
+          label.callback-label(for=(prefix ? prefix + '-phone' : 'phone')) Введите ваш номер телефона
+          input.callback-input(id=(prefix ? prefix + '-phone' : 'phone') type="text", name="Телефон", placeholder="+7 (_ _) _ _ _-_ _-__")
+        .callback-input-wrap
+          input.btn(type="submit", value="Получить консультацию")
+          input(id=(prefix ? prefix + '-privacy' : 'privacy') type="checkbox", name="privacy", checked)
+          label.callback-label.privacy-label(for=(prefix ? prefix + '-privacy' : 'privacy')) Согласен с Политикой конфиденциальности сайта
+
+mixin getCommerce(text='Получить коммерческое предложение',className='title-action-btn')
+  button(class=className).btn=text
+
+mixin dottedList(arrItems,className)
+  ul(class=className).dotted-items
+    each text in arrItems
+      li.dotted-item!=text
+
+mixin numericList(arrItems, className)
+  ul(class=className).num-items
+    each text in arrItems
+      li.num-item!=text
+
+mixin expertsList(arrItems)
+  ul.experts-list
+    each expert in arrItems
+      li.experts-item 
+        p.experts-item-title Категория:
+        p.experts-item-exp=expert[0]
+        p.experts-item-title Опыт:
+        p.experts-item-exp=expert[1]
+        p.experts-item-name!=expert[2]
+
+mixin commerceList(arrItems)
+  ul.commerce-list 
+    each commerce in arrItems
+      li.commerce-item
+        .commerce-icon-wrap
+          +icon('commerce-icon', commerce[0])
+        p.commerce-desc!=commerce[1]

@@ -1,0 +1,36 @@
+@mixin display-flex($align: center, $justify: center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin display-before($content: "", $display: block, $position: absolute, $h: null, $w: null) {
+    content: $content;
+    display: $display;
+    position: $position;
+    @if $h {
+        height: $h;
+    }
+    @if $w {
+        width: $w;
+    }
+}
+
+@mixin link-hover($color: $color-text) {
+    &:hover,
+    &:active,
+    &:focus{
+        color: $color;
+        text-decoration: none;
+    }
+}
+
+@mixin swiper-button {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    &::before,
+    &::after {
+        font-size: 18px;
+    }
+}

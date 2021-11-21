@@ -1,0 +1,100 @@
+@import "../mixins/common.scss";
+
+.header-container {
+    padding: 15px 30px;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    column-gap: 30px;
+    align-items: center;
+}
+
+.logo-container {
+    @include display-flex($justify: flex-start);
+}
+
+.logo {
+    width: 100px;
+    height: 105px;
+    margin-right: 20px;
+}
+
+.logo-title-txt {
+    font-family: "Gilroy-Bold", sans-serif;
+    font-size: 20px;
+    line-height: 29px;
+    color: #2f2f2f;
+}
+
+.logo-title-desc {
+    font-size: 13px;
+    line-height: 134.4%;
+    color: $color-font-logo;
+    max-width: 175px;
+}
+
+.nav-top-items {
+    @include display-flex($justify: center);
+}
+
+.nav-top-item:not(:nth-last-child(1)) {
+    margin-right: 25px;
+}
+
+.nav-top-link {
+    font-size: 16px;
+    line-height: 24px;
+    transition: color $primary-delay ease-in;
+    @include link-hover($color-primary);
+}
+
+.top-btn {
+    width: 245px;
+    height: 55px;
+    font-size: 17px;
+}
+
+.nav-header {
+    background: $color-gradient;
+}
+
+.nav-header-items {
+    min-height: 82px;
+    @include display-flex($align: stretch, $justify: flex-start);
+}
+
+.nav-header-item {
+    @include display-flex($align: stretch);
+    border-right: 1px solid rgba(255, 255, 255, 0.54);
+    transition: background $primary-delay ease-in, border $primary-delay ease-in;
+    &:hover {
+        background: $color-primary;
+    }
+    &:nth-child(1) {
+        border-left: 1px solid transparent;
+        &:hover {
+            border-left: 1px solid rgba(255, 255, 255, 0.54);
+        }
+    }
+    &:nth-last-child(1) {
+        border-right: 1px solid transparent;
+        &:hover {
+            border-right: 1px solid rgba(255, 255, 255, 0.54);
+        }
+    }
+}
+
+.nav-header-link {
+    font-size: 16px;
+    line-height: 120%;
+    color: $color-third;
+    max-width: 180px;
+    @include display-flex;
+    padding: 10px 16px;
+}
+
+.burger {
+    width: 18px;
+    height: 12px;
+    fill: $color-third;
+    margin-right: 10px;
+}
