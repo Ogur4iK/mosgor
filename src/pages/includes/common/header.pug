@@ -1,4 +1,97 @@
 header#header
+    nav.services-menu 
+        .container.services-menu-container
+            .services-menu-header
+                .search-container
+                    input#search-input(type="text" placeholder="Начните вводить название…")
+                    button#search-btn 
+                        +icon('search-icon', 'service-2')
+                #close-service-menu 
+                    p.close-txt Закрыть
+                    +icon('close-icon', 'close-2')
+            ul.service-menu-cells
+                li.service-menu-cell
+                    +icon('service-icon', 'service-1')
+                    p.service-cell-title Экспертиза промышленной безопасности
+                    ul.service-menu-links
+                        li: a(href="#").service-menu-link Зданий и строений
+                        li: a(href="#").service-menu-link Технических устройств
+                        li: a(href="#").service-menu-link Проектной документации на техническое перевооружение, консервацию, ликвидацию ОПО
+                        li: a(href="#").service-menu-link Обоснования безопасности
+                        li: a(href="#").service-menu-link Декларации промышленной безопасности
+                li.service-menu-cell
+                    +icon('service-icon', 'service-2')
+                    p.service-cell-title Техническое диагностирование
+                    ul.service-menu-links
+                        li: a(href="#").service-menu-link Зданий и строений
+                        li: a(href="#").service-menu-link Технических устройств
+                li.service-menu-cell
+                    +icon('service-icon', 'service-3')
+                    p.service-cell-title Разработка документации для ОПО
+                    ul.service-menu-links
+                        li: a(href="#").service-menu-link Положение о производственном контроле (ППК)
+                        li: a(href="#").service-menu-link Положение о расследовании причин инцидентов (ПРИ)
+                        li: a(href="#").service-menu-link План мероприятий по локализации и ликвидации последствий аварий (ПМЛА)
+                        li: a(href="#").service-menu-link Отчёт о производственном контроле (ОПК)
+                        li: a(href="#").service-menu-link Технические паспорта на ЗС и ТУ
+                        li: a(href="#").service-menu-link Декларация промышленной безопасности
+                        li: a(href="#").service-menu-link Обоснование безопасности ОПО
+                        li: a(href="#").service-menu-link Паспорт безопасности ОПО
+                        li: a(href="#").service-menu-link Разработка системы управления промышленной
+                li.service-menu-cell
+                    +icon('service-icon', 'service-4')
+                    p.service-cell-title Регистрация и лицензирование ОПО
+                    ul.service-menu-links
+                        li: a(href="#").service-menu-link Регистрация ОПО 
+                        li: a(href="#").service-menu-link Перерегистрация ОПО 
+                        li: a(href="#").service-menu-link Исключение ОПО из госреестра
+                        li: a(href="#").service-menu-link Получение лицензии от РосТехНаздора
+                        li: a(href="#").service-menu-link Переоформление лицензии от РосТехНаздора
+                li.service-menu-cell
+                    +icon('service-icon', 'service-5')
+                    p.service-cell-title Разработка #[br]проектов
+                    ul.service-menu-links
+                        li: a(href="#").service-menu-link Технического перевооружения ОПО
+                        li: a(href="#").service-menu-link Консервации ОПО
+                        li: a(href="#").service-menu-link Ликвидации ОПО
+                        li: a(href="#").service-menu-link Реконструкции ОПО
+                li.service-menu-cell
+                    +icon('service-icon', 'service-6')
+                    p.service-cell-title Судебная экспертиза
+                    ul.service-menu-links
+                        li: a(href="#").service-menu-link Оценочная
+                        li: a(href="#").service-menu-link Почерковедческая
+                        li: a(href="#").service-menu-link Технико-криминалистическая
+                        li: a(href="#").service-menu-link Строительно-техническая
+                li.service-menu-cell
+                    +icon('service-icon', 'service-7')
+                    p.service-cell-title Обучение
+                    ul.service-menu-links
+                        li: a(href="#").service-menu-link Проектной документации
+                        li: a(href="#").service-menu-link Проектной документации
+                        li: a(href="#").service-menu-link Проектной документации
+                        li: a(href="#").service-menu-link Результатов инженерных изысканий
+                        li: a(href="#").service-menu-link Результатов инженерных изысканий
+                        li: a(href="#").service-menu-link Результатов инженерных изысканий
+                        li: a(href="#").service-menu-link Аудит проектной документации
+                        li: a(href="#").service-menu-link Аудит проектной документации
+                        li: a(href="#").service-menu-link Аудит проектной документации
+                        li: a(href="#").service-menu-link Проектной документации
+                        li: a(href="#").service-menu-link Проектной документации
+                        li: a(href="#").service-menu-link Проектной документации
+                        li: a(href="#").service-menu-link Результатов инженерных изысканий
+                        li: a(href="#").service-menu-link Результатов инженерных изысканий
+                        li: a(href="#").service-menu-link Результатов инженерных изысканий
+                        li: a(href="#").service-menu-link Аудит проектной документации
+                        li: a(href="#").service-menu-link Аудит проектной документации
+                        li: a(href="#").service-menu-link Аудит проектной документации
+                li.service-menu-cell
+                    +icon('service-icon', 'service-8')
+                    p.service-cell-title Негосударственная экспертиза
+                    ul.service-menu-links
+                        li: a(href="#").service-menu-link Проектной документации
+                        li: a(href="#").service-menu-link Результатов инженерных изысканий
+                        li: a(href="#").service-menu-link Аудит проектной документации
     .container.header-container
         .logo-container
             a(href="/").logo-link
@@ -23,7 +116,7 @@ header#header
     nav.nav-header
         ul.nav-header-items.container
             li.nav-header-item
-                a.nav-header-link.nav-header-link__services(href="#")
+                button#open-menu-services.nav-header-link
                     +icon('burger', 'burger')
                     |Услуги
             li.nav-header-item

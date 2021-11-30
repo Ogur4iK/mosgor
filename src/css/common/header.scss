@@ -90,6 +90,7 @@
     max-width: 180px;
     @include display-flex;
     padding: 10px 16px;
+    background: transparent;
 }
 
 .burger {
