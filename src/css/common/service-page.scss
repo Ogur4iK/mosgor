@@ -209,6 +209,13 @@
     }
 }
 
+.tab-top-content{
+    display: none;
+    &.active{
+        display: block;
+    }
+}
+
 .tabs-bottom-title {
     font-size: 20px;
     line-height: 22px;
@@ -221,7 +228,7 @@
 
 .tabs-bottom {
     width: 35.6%;
-    & + .tabs-bottom-content {
+    & + .tab-bottom-content-container {
         width: 64.4%;
     }
 }
@@ -251,9 +258,14 @@
     }
 }
 
-.tabs-bottom-content {
+.tab-bottom-content {
     background: $color-third;
     padding: 40px 0 30px 100px;
+    height: 100%;
+    display: none;
+    &.active{
+        display: block;
+    }
 }
 
 .bottom-bordered-wrap {
@@ -471,6 +483,13 @@
         &::before {
             opacity: 1;
         }
+    }
+}
+
+.result-tab-content{
+    display: none;
+    &.active{
+        display: block;
     }
 }
 

@@ -43,76 +43,146 @@ block content
       h3.tabs-title Выполняем все виды экспертизы, #[span предусмотренные ст. 13 Федерального закона № 116-ФЗ от&nbsp;21.07.1997&nbsp;«О&nbsp;промышленной&nbsp;безопасности&nbsp;опасных&nbsp;производственных&nbsp;объектах»]
       ul.tabs-top
         li.tab-top
-          button.tab-top-btn Зданий и сооружений
+          button.tab-top-btn(data-tab="#tab-top-content-1") Зданий и сооружений
         li.tab-top
-          button.tab-top-btn.active Технических устройств
+          button.tab-top-btn(data-tab="#tab-top-content-2") Технических устройств
         li.tab-top
-          button.tab-top-btn Проектной документации
+          button.tab-top-btn(data-tab="#tab-top-content-3") Проектной документации
         li.tab-top
-          button.tab-top-btn Обоснования безопасности
+          button.tab-top-btn(data-tab="#tab-top-content-4") Обоснования безопасности
         li.tab-top
-          button.tab-top-btn Декларации промышленной безопасности
-      ul 
-        li
+          button.tab-top-btn(data-tab="#tab-top-content-5") Декларации промышленной безопасности
+      ul
+        li#tab-top-content-1.tab-top-content
+          p.tabs-bottom-title Зданий и сооружений
+        li#tab-top-content-2.tab-top-content
           p.tabs-bottom-title На объектах:
           .tabs-bottom-container
             ul.tabs-bottom
               li.tab-bottom 
-                button.tab-bottom-btn.active Угольной, сланцевой и&nbsp;торфяной&nbsp;промышленности
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-1") Угольной, сланцевой и&nbsp;торфяной&nbsp;промышленности
               li.tab-bottom 
-                button.tab-bottom-btn Получения, хранения, использования и транспортировки взрывчатых веществ
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-2") Получения, хранения, использования и транспортировки взрывчатых веществ
               li.tab-bottom 
-                button.tab-bottom-btn Горной и нерудной промышленности
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-3") Горной и нерудной промышленности
               li.tab-bottom 
-                button.tab-bottom-btn Нефтегазодобывающего комплекса
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-4") Нефтегазодобывающего комплекса
               li.tab-bottom 
-                button.tab-bottom-btn Магистрального трубопроводного транспорта
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-5") Магистрального трубопроводного транспорта
               li.tab-bottom 
-                button.tab-bottom-btn Химической, нефтехимической и нефтеперерабатывающей промышленности
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-6") Химической, нефтехимической и нефтеперерабатывающей промышленности
               li.tab-bottom 
-                button.tab-bottom-btn Систем водоподготовки
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-7") Систем водоподготовки
               li.tab-bottom 
-                button.tab-bottom-btn Нефтепродуктообеспечения
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-8") Нефтепродуктообеспечения
               li.tab-bottom 
-                button.tab-bottom-btn Пищевой и масложировой промышленности
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-9") Пищевой и масложировой промышленности
               li.tab-bottom 
-                button.tab-bottom-btn Газоснабжения
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-10") Газоснабжения
               li.tab-bottom 
-                button.tab-bottom-btn Металлургической промышленностии ОПО чёрных и цветных металлов
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-11") Металлургической промышленностии ОПО чёрных и цветных металлов
               li.tab-bottom 
-                button.tab-bottom-btn Использующих грузоподъёмные механизмы, эскалаторы, канатные дороги и фуникулёры
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-12") Использующих грузоподъёмные механизмы, эскалаторы, канатные дороги и фуникулёры
               li.tab-bottom 
-                button.tab-bottom-btn Хранения, переработки и использования растительного сырья
-            .tabs-bottom-content
-              .bottom-bordered-wrap
-                .tabs-icon-wrap
-                  +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
-                p.tabs-content-title Угольной, сланцевой и&nbsp;торфяной&nbsp;промышленности
-                +dottedList([
-                  'Шахтных подъёмных установок',
-                  'Шахтных подъёмных установок',
-                  'Проходческих комплексов',
-                  'Проходческих комплексов',
-                  'Очистных комплексов, агрегатов&nbsp;и&nbsp;комбайнов',
-                  'Очистных комплексов, агрегатов&nbsp;и&nbsp;комбайнов',
-                  'Ленточных конвейеров',
-                  'Ленточных конвейеров',
-                  'Скребковых конвейеров',
-                  'Скребковых конвейеров',
-                  'Оборудования для механизации вспомогательных работ',
-                  'Оборудования для механизации вспомогательных работ',
+                button.tab-bottom-btn(data-tab="#tab-bottom-content-13") Хранения, переработки и использования растительного сырья
+            ul.tab-bottom-content-container
+              li#tab-bottom-content-1.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Угольной, сланцевой и&nbsp;торфяной&nbsp;промышленности
+                  +dottedList([
+                    'Шахтных подъёмных установок',
+                    'Шахтных подъёмных установок',
+                    'Проходческих комплексов',
+                    'Проходческих комплексов',
+                    'Очистных комплексов, агрегатов&nbsp;и&nbsp;комбайнов',
+                    'Очистных комплексов, агрегатов&nbsp;и&nbsp;комбайнов',
+                    'Ленточных конвейеров',
+                    'Ленточных конвейеров',
+                    'Скребковых конвейеров',
+                    'Скребковых конвейеров',
+                    'Оборудования для механизации вспомогательных работ',
+                    'Оборудования для механизации вспомогательных работ',
+                  ], 'tabs-list')
+                  +getCommerce()
+                p.tabs-content-sub-title.w50p Когда проводится экспертиза технических устройств
+                +numericList([
+                  'при отсутствии проектной документации, либо отсутствия в ней данных о сроке эксплуатации',
+                  'по истечении сроков безопасной эксплуатации, установленных заключениями экспертизы',
+                  'после аварии на ОПО, в результате которой были повреждены несущие конструкции данных ЗС',
+                  'по истечении срока эксплуатации, установленного проектной дкументацией',
+                  'при обнаружении значительных дефектов, повреждений и деформаций',
+                  'при изменении технологического назначения ЗС',
+                  'по предписанию органов Ростехнадзора',
                 ], 'tabs-list')
-                +getCommerce()
-              p.tabs-content-sub-title.w50p Когда проводится экспертиза технических устройств
-              +numericList([
-                'при отсутствии проектной документации, либо отсутствия в ней данных о сроке эксплуатации',
-                'по истечении сроков безопасной эксплуатации, установленных заключениями экспертизы',
-                'после аварии на ОПО, в результате которой были повреждены несущие конструкции данных ЗС',
-                'по истечении срока эксплуатации, установленного проектной дкументацией',
-                'при обнаружении значительных дефектов, повреждений и деформаций',
-                'при изменении технологического назначения ЗС',
-                'по предписанию органов Ростехнадзора',
-              ], 'tabs-list')
+              li#tab-bottom-content-2.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Получения, хранения, использования и транспортировки взрывчатых веществ
+              li#tab-bottom-content-3.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Горной и нерудной промышленности
+              li#tab-bottom-content-4.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Нефтегазодобывающего комплекса
+              li#tab-bottom-content-5.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Магистрального трубопроводного транспорта
+              li#tab-bottom-content-6.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Химической, нефтехимической и нефтеперерабатывающей промышленности
+              li#tab-bottom-content-7.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Систем водоподготовки
+              li#tab-bottom-content-8.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Нефтепродуктообеспечения
+              li#tab-bottom-content-9.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Пищевой и масложировой промышленности
+              li#tab-bottom-content-10.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Газоснабжения
+              li#tab-bottom-content-11.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Металлургической промышленностии ОПО чёрных и цветных металлов
+              li#tab-bottom-content-12.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Использующих грузоподъёмные механизмы, эскалаторы, канатные дороги и фуникулёры
+              li#tab-bottom-content-13.tab-bottom-content
+                .bottom-bordered-wrap
+                  .tabs-icon-wrap
+                    +icon(['tabs-icon', 'tabs-icon-epb'],'tabs-icon-epb')
+                  p.tabs-content-title Хранения, переработки и использования растительного сырья
+        li#tab-top-content-3.tab-top-content
+          p.tabs-bottom-title Проектной документации
+        li#tab-top-content-4.tab-top-content
+          p.tabs-bottom-title Обоснования безопасности
+        li#tab-top-content-5.tab-top-content
+          p.tabs-bottom-title Декларации промышленной безопасности
+          
     +callback('Не нашли в списке ваш опасный производственный объект?', 'Оставьте номер телефона — мы свяжемся с вами в течение 20 минут и расскажем, сможем ли провести экспертизу на вашем объекте, сколько это займёт и сколько будет стоить')
     section#steps
       .container
@@ -158,15 +228,22 @@ block content
       h3.result-title Вы получите заключение ЭПБ, которое состоит из более чем 50 листов и содержит:
       .result-tabs-container
         ul.result-tabs 
-          li.result-tab.active Вводную часть состоящую из данных, на основании которых проводился экспертный анализ
-          li.result-tab Список объектов, которые оценивались
-          li.result-tab Сведения заказчика
-          li.result-tab Рассматриваемая документация
-          li.result-tab Предназначены объектов экспертизы
-          li.result-tab Выводы, сделанные на основании оценки данный&nbsp;заказчика
-          li.result-tab Приложение, содержащее список #[br]нормативно-технической базы
+          li.result-tab(data-tab="#result-tab-content-1") Вводную часть состоящую из данных, на основании которых проводился экспертный анализ
+          li.result-tab(data-tab="#result-tab-content-2") Список объектов, которые оценивались
+          li.result-tab(data-tab="#result-tab-content-3") Сведения заказчика
+          li.result-tab(data-tab="#result-tab-content-4") Рассматриваемая документация
+          li.result-tab(data-tab="#result-tab-content-5") Предназначены объектов экспертизы
+          li.result-tab(data-tab="#result-tab-content-6") Выводы, сделанные на основании оценки данный&nbsp;заказчика
+          li.result-tab(data-tab="#result-tab-content-7") Приложение, содержащее список #[br]нормативно-технической базы
         ul.result-tabs-content 
-          li.result-tab-content
+          li#result-tab-content-1.result-tab-content
+            img.result-img(src="/images/epb/result-tab-1.jpg", alt="Вводную часть")
+          li#result-tab-content-2.result-tab-content Список объектов, которые оценивались
+          li#result-tab-content-3.result-tab-content Сведения заказчика
+          li#result-tab-content-4.result-tab-content Рассматриваемая документация
+          li#result-tab-content-5.result-tab-content Предназначены объектов экспертизы
+          li#result-tab-content-6.result-tab-content Выводы, сделанные на основании оценки данный&nbsp;заказчика
+          li#result-tab-content-7.result-tab-content
             img.result-img(src="/images/epb/result-tab-1.jpg", alt="Вводную часть")
     section#orders
       .container
